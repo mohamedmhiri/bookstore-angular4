@@ -1,0 +1,8 @@
+<div class="toolbar">
+  <button (click)="auth.login()" *ngIf="!auth.loggedIn()">
+        Login
+      </button>
+  <button (click)="auth.logout()" *ngIf="auth.loggedIn()">
+        Logout
+      </button>
+</div>

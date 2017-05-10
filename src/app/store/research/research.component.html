@@ -1,0 +1,57 @@
+<br><br><br>
+<div class="ui raised very padded text container piled segments">
+  <div class="ui segment">
+    <div class="ui left rail">
+      <div class="ui segment">
+        <form class="ui form" #f="ngForm" novalidate>
+          <h4 class="ui dividing header">Research</h4>
+          <div class="field">
+            <label>Book Name</label>
+            <div class="field">
+              <input type="text" name="name" [(ngModel)]=book.name placeholder="Book Name">
+            </div>
+          </div>
+          <div class="field">
+            <label>Author Name</label>
+            <div class="field">
+              <input type="text" name="author" [(ngModel)]=book.author placeholder="Author Name">
+            </div>
+          </div>
+          <div class="field">
+            <label>Edition Name</label>
+            <div class="field">
+              <input type="text" name="edition" [(ngModel)]=book.edition placeholder="Edition Name">
+            </div>
+          </div>
+          <div class="field">
+            <label>Edition Date</label>
+            <div class="field">
+              <input type="text" name="editionDate" [(ngModel)]=book.editionDate placeholder="Edition Date">
+            </div>
+          </div>
+          <div class="field">
+            <label>Category</label>
+            <select name="category" [(ngModel)]="book.category">
+                  <option *ngFor="let category of categories" [value]="category._id">  
+                  {{category.name}}
+                  </option>
+                </select>
+          </div>
+          <div class="field">
+
+            <label for="price-min">Price Min:</label>
+            <input type="number" name="priceMin" id="price-min" min="10" max="500" [(ngModel)]="book.priceMin">
+
+            <label for="price-max">Price Max:</label>
+            <input type="number" name="priceMax" id="price-max" min="10" max="500" [(ngModel)]="book.priceMax">
+          </div>
+
+          <button class="ui button" type="submit" (click)="c.getBookAdvancedSearch(book)">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="container ui clearing segment">
+      <book-catalog #c></book-catalog>
+    </div>
+  </div>
+</div>

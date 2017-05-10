@@ -1,0 +1,42 @@
+<div class="ui fixed inverted menu">
+  <div class="ui container">
+    <a href="#" class="header item">
+      <img class="logo" src="../../../../../public/img/logo.png">
+      <br>jeBouquine
+    </a>
+    <a class="item" routerLink='#'>
+        Home
+      </a>
+    <a class="item" routerLink='#'>
+        About Us
+      </a>
+    <store-header-search class="right item ui action input"></store-header-search>
+
+    <a class="item" routerLink='cart'>
+      <i class="big icons">
+              <i class="inverted shop icon"></i>
+      <i class="grey corner add icon"></i>
+      </i>
+    </a>
+
+    <!--<div class="right menu">
+    <div class="ui dropdown item">
+      Language <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item">English</a>
+        <a class="item">Russian</a>
+        <a class="item">Spanish</a>
+      </div>
+    </div>
+    </div>-->
+    <a class="item" *ngIf="!auth.isAuthenticated()" routerLink='login'>
+        Sign In
+      </a>
+      <a class="item" (click)="auth.logout()" *ngIf="auth.isAuthenticated()" routerLink='#'>
+        Logout
+      </a>
+    <a class="item" routerLink='#'>
+        Sign Up
+      </a>
+  </div>
+</div>

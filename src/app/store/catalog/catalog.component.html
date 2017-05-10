@@ -1,0 +1,61 @@
+<br><br><br><br><br>
+<div class="ui segment">
+  <!--<div class="ui top attached tabular menu">
+    <a class="item" data-tab="first">First</a>
+    <a class="item" data-tab="second">Second</a>
+    <a class="item active" data-tab="third">Third</a>
+  </div>
+  <div class="ui bottom attached tab segment active" [style.class]="" (click)="" data-tab="first">
+    First
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="second">
+    Second
+  </div>
+  <div class="ui bottom attached tab segment" data-tab="third">
+    Third
+  </div>-->
+  <div class="ui raised very padded text container segment">
+    <div class="ui four column doubling grid">
+      <!--<div class="ui four column grid">-->
+      <div class="column" *ngFor="let book of books">
+        <div class="ui card">
+          <div class="ui small image">
+            <img src="{{book.image}}">
+          </div>
+          <div class="left aligned eight wide column">
+            <div class="ui three column grid">
+              <div class="column">
+                {{book.name}}
+              </div>
+            </div>
+          </div>
+          <!--<div class="content">
+            <div class="header">{{book.name}}</div>
+            <div class="meta">
+              <a>more details</a>
+            </div>-->
+          <!--<div class="description">
+            {{book.description}}
+          </div>-->
+          <!--</div>-->
+          <div class="extra content">
+            <span class="right floated">
+              {{book.price}}
+            </span>
+            <span>
+              <div class="ui vertical animated button" tabindex="0">
+                <div  (click)="addToCart(book)"  class="hidden content">
+                Shop
+                </div>
+                <div  class="visible content">
+                  <i  class="shop icon"></i>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br><br>

@@ -2,9 +2,18 @@
   "name": "bookstore-client-side",
   "version": "0.0.0",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamedmhiri/bookstore-client-side.git"
+  },
+  "author": "mohamed mhiri && maryem en yahia",
+  "bugs": {
+    "url": "https://github.com/mohamedmhiri/bookstore-client-side/issues"
+  },
+  "homepage": "https://github.com/mohamedmhiri/bookstore-client-side#readme",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng build && ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -20,7 +29,11 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "angular2-jwt": "^0.2.3",
+    "angular2-semantic-ui": "^2.0.2",
+    "auth0-js": "^8.6.1",
     "core-js": "^2.4.1",
+    "ng2-semantic-ui": "^0.6.4",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },

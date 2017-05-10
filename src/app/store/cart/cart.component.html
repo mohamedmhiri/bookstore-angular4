@@ -1,0 +1,52 @@
+<br><br><br><br><br>
+<div class="ui raised very padded text container piled segments">
+  <div class="ui segment">
+    
+        <form class="ui form" #f="ngForm" novalidate>
+    <table class="ui compact celled definition table">
+        <thead class="full-width">
+          <tr>
+            <th></th>
+            <th>Book</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books; let i = index; trackBy: trackBooks">
+            <td class="collapsing">
+              <div (click)="removeBookFromCart(i)">
+                <i class="trash outline icon"></i>
+              </div>
+            </td>
+            <td>{{book.name}}</td>
+            <td><input  type="number"  name="quantity"  [(ngModel)]="book.TotalQty" ></td>
+            <td><input [value]="book.oldPrice" readonly [(ngModel)]="book.oldPrice" name="price"></td>
+            <td>{{book.TotalQty * book.oldPrice}}</td>
+            
+          
+          </tr>
+          
+        </tbody>
+        <tfoot class="full-width">
+          <tr>
+            <th></th>
+            <th colspan="4">
+              
+              <div (click)="totalQ()" class="ui small  button">
+                Total Price
+              </div>
+              {{total}}
+              
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+         <button class="ui button" type="submit" (click)="passCommand()">Pass To Order</button>
+        </form>
+  </div>
+</div>
+<br><br><br><br><br>
