@@ -15,7 +15,7 @@ export class CartService {
     addCart(cart) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.put(`${this.url}carts`, JSON.stringify(cart), { headers: headers/*, withCredentials: true  */}).map(response => response.json());
+        return this.http.put(`${this.url}carts`, JSON.stringify(cart), { headers: headers, withCredentials: true  }).map(response => response.json());
     }
 
 
