@@ -45,7 +45,9 @@
           </tr>
         </tfoot>
       </table>
-         <button class="ui button" type="submit" (click)="passCommand()">Pass To Order</button>
+         <button class="ui button" type="submit" *ngIf="auth.isAuthenticated()" (click)="passCommand()" [routerLink]='["../credit"]'>Pass To Order</button>
+         <button class="ui button" type="submit" *ngIf="!auth.isAuthenticated()" (click)="auth.loginWithGoogle(); getCommand()" >Pass To Order</button>
+         
         </form>
   </div>
 </div>

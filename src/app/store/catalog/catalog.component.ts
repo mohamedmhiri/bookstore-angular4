@@ -1,6 +1,7 @@
 import { CartService } from './../../services/cart.service';
 import { BookService } from './../../services/book.service';
 import { Component, OnInit } from '@angular/core';
+import { Cookie } from 'ng2-cookies/ng2-cookies';
 
 @Component({
   selector: 'book-catalog',
@@ -53,8 +54,23 @@ export class CatalogComponent implements OnInit {
       this.cartsService.addCart(this.cart).subscribe(data => {
         console.log('Success' + data)
         //this.books.push(book);
+        Cookie.set('angular-cookie', data._id)
       })
     }
+
+    /*Cookie.set('cookieName', 'cookieValue');
+    Cookie.set('cookieName', 'cookieValue', 10 days from now);
+    Cookie.set('cookieName', 'cookieValue', 10, '/myapp/', 'mydomain.com');
+    
+    let myCookie = Cookie.get('cookieName');
+    
+    
+    // List of cookies as Object, like: { cookieName: "cookieValue", cookieName2: "cookieValue2" ... etc }
+    
+    let cookielist = Cookie.getAll();
+    
+    Cookie.delete('cookieName');
+    Cookie.deleteAll();*/
   }
 
 }

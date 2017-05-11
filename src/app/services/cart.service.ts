@@ -19,8 +19,8 @@ export class CartService {
     }
 
 
-    getCartById() {
-        return this.http.get(`${this.url}cart`)
+    getCartById(id: number) {
+        return this.http.get(`${this.url}cart/${id}`)
             .map(res => res.json());
     }
 

@@ -14,6 +14,7 @@ import { ErrorComponent } from './error/error.component';
 import { HeaderSearchComponent } from './header-search/header-search.component';
 import { ResearchComponent } from './research/research.component';
 import { CartComponent } from './cart/cart.component';
+import { CreditNumberComponent } from './credit-number/credit-number.component';
 
 
 const ROUTES = [
@@ -46,6 +47,10 @@ const ROUTES = [
     {
          path: 'cart', 
         component: CartComponent
+    },
+    {
+        path: 'credit',
+        component: CreditNumberComponent
     }
 
 
@@ -64,7 +69,8 @@ const ROUTES = [
     ErrorComponent,
     CatalogComponent,
     ResearchComponent,
-    CartComponent
+    CartComponent,
+    CreditNumberComponent
   ],
   exports: [
     HeaderComponent,

@@ -38,7 +38,7 @@ export class Auth {
         window.location.hash = '';
         localStorage.setItem('access_token', authResult.accessToken);
         localStorage.setItem('id_token', authResult.idToken);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/store/cart']);
       }
     });
   }

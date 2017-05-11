@@ -28,7 +28,7 @@ import { StoreModule } from './store/store.module';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
 import { StoreComponent } from './store/store.component';
-import {SuiModule} from 'ng2-semantic-ui';
+import { SuiModule } from 'ng2-semantic-ui';
 
 const ROUTES = [
     {
