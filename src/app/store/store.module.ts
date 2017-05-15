@@ -51,6 +51,10 @@ const ROUTES = [
     {
         path: 'credit',
         component: CreditNumberComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     }
 
 
@@ -70,7 +74,8 @@ const ROUTES = [
     CatalogComponent,
     ResearchComponent,
     CartComponent,
-    CreditNumberComponent
+    CreditNumberComponent,
+    LoginComponent
   ],
   exports: [
     HeaderComponent,
@@ -79,7 +84,8 @@ const ROUTES = [
     ErrorComponent,
     CatalogComponent,
     ResearchComponent,
-    CartComponent
+    CartComponent,
+    LoginComponent
   ],
   providers: [
 /*    MainContentComponent,

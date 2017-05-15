@@ -35,7 +35,7 @@
       <a class="item" (click)="auth.logout()" *ngIf="auth.isAuthenticated()" routerLink='#'>
         Logout
       </a>
-    <a class="item" routerLink='#'>
+    <a class="item" *ngIf="!auth.isAuthenticated()" routerLink='login'>
         Sign Up
       </a>
   </div>

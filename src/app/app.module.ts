@@ -28,7 +28,9 @@ import { StoreModule } from './store/store.module';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
 import { StoreComponent } from './store/store.component';
+// semantic-ui modules
 import { SuiModule } from 'ng2-semantic-ui';
+import { NgSemanticModule } from 'ng-semantic';
 
 const ROUTES = [
     {
@@ -62,8 +64,7 @@ const ROUTES = [
   declarations: [
     AppComponent,
     AdminComponent,
-    StoreComponent,
-    LoginComponent
+    StoreComponent
   ],
   imports: [
     BrowserModule,
@@ -75,6 +76,7 @@ const ROUTES = [
     AuthModule,
     AdminModule,
     SuiModule,
+    //NgSemanticModule,
     RouterModule.forRoot(ROUTES)
   ],
   exports: [
