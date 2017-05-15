@@ -21,8 +21,8 @@ import { AppConfig } from './config/app-config';
 import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
 import { StoreModule } from './store/store.module';
-/*import { AppRouterModule } from './app-router/app-router.module';
-*/import { BrowserModule } from '@angular/platform-browser';
+import { AppRouterModule } from './app-router/app-router.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 import { AppComponent } from './app.component';
@@ -32,7 +32,7 @@ import { StoreComponent } from './store/store.component';
 import { SuiModule } from 'ng2-semantic-ui';
 import { NgSemanticModule } from 'ng-semantic';
 
-const ROUTES = [
+/*const ROUTES = [
     {
         path: '',
         redirectTo: 'store',
@@ -46,7 +46,7 @@ const ROUTES = [
         path: 'books',
         component: BooksComponent
     },*/
-    {
+ /*   {
         path: 'store',
         loadChildren: './store/store.module#StoreModule',
         component:StoreComponent
@@ -55,7 +55,7 @@ const ROUTES = [
         path: 'admin',
         loadChildren: './admin/admin.module#AdminModule'
     }
-]
+]*/
 
 
 
@@ -70,14 +70,13 @@ const ROUTES = [
     BrowserModule,
     FormsModule,
     HttpModule,
-/*    AppRouterModule,
-*/    
+    AppRouterModule,
     StoreModule,
     AuthModule,
     AdminModule,
-    SuiModule,
+    SuiModule//,
     //NgSemanticModule,
-    RouterModule.forRoot(ROUTES)
+    //RouterModule.forRoot(ROUTES)
   ],
   exports: [
   ],

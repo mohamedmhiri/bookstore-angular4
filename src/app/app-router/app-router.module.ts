@@ -11,34 +11,25 @@ import { APP_BASE_HREF } from '@angular/common';
 
 const ROUTES = [
     
-    /*{
-        path: 'toolbar',
-        component: ToolbarComponent
-    },
-    {
-        path: 'catalog',
-        component: CatalogComponent
-    },*/
-    ///////////////////////////////////
-    ///////////////
-    /*{
-        path: 'home',
-        component: StoreComponent
-    },
-    {
-        path: 'login',
-        component: LoginComponent
-    },
     {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'store',
         pathMatch: 'full'
+    },
+    {
+        path: 'store',
+        loadChildren: './store/store.module#StoreModule',
+        component:StoreComponent
+    },
+    {
+        path: 'admin',
+        loadChildren: './admin/admin.module#AdminModule'
     },
     {
         path: '**',
         component: ErrorComponent
     }
-    */
+    
 
 ]
 
