@@ -1,3 +1,4 @@
+import { AdminComponent } from './../admin/admin.component';
 import { MainContentComponent } from './../store/shared/main-content/main-content.component';
 import { ErrorComponent } from './../store/error/error.component';
 import { StoreComponent } from './../store/store.component';
@@ -18,12 +19,13 @@ const ROUTES = [
     },
     {
         path: 'store',
-        loadChildren: './store/store.module#StoreModule',
-        component:StoreComponent
+        loadChildren: '../store/store.module#StoreModule',
+        component: StoreComponent
     },
     {
         path: 'admin',
-        loadChildren: './admin/admin.module#AdminModule'
+        loadChildren: '../admin/admin.module#AdminModule',
+        component: AdminComponent
     },
     {
         path: '**',
@@ -40,12 +42,14 @@ const ROUTES = [
     RouterModule.forRoot(ROUTES),// Add routes to the app
   ],
   declarations: [
+
   ],
   providers: [
       {provide: APP_BASE_HREF, useValue: '/' }
   ],
   exports: [
       RouterModule
+
   ]
 })
 export class AppRouterModule { }
