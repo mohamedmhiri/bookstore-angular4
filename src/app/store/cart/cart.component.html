@@ -23,7 +23,13 @@
               </div>
             </td>
             <td>{{book.name}}</td>
-            <td><input  type="number"  name="quantity"  [(ngModel)]="book.TotalQty >= book.availableBooks ?  book.availableBooks : book.TotalQty" ></td>
+            <td>
+             <select name="quantity" [(ngModel)]="book.TotalQty">
+                  <option  *ngFor="let nb of book.max" [value]="nb">  
+                  {{nb}}
+                  </option>
+                </select>
+            </td>
             <td><input [value]="book.oldPrice" readonly [(ngModel)]="book.oldPrice" name="price"></td>
             <td>{{book.TotalQty * book.oldPrice}}</td>
             

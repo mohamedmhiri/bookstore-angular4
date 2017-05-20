@@ -35,6 +35,15 @@ export class CartComponent implements OnInit, OnChanges, DoCheck {
       console.log(data)
       console.log('cart' + data.books[0].name)
       this.books = data.books
+      this.books.forEach(element => {
+         let max=[]
+         for(let i=1; i<= element.inMarket ; i++)
+         {
+           max.push(i)
+
+         }
+         element.max=max
+      });
     })
     /*console.log(this.data+'after first sub')
         let fields = `${this.data.books[0]}`

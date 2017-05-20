@@ -68,7 +68,8 @@ const ROUTES = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(ROUTES),
-    CollectionModule
+    CollectionModule,
+   
  ],
   declarations: [
     HeaderComponent,
