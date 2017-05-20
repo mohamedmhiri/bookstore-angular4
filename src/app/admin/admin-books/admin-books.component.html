@@ -1,0 +1,11 @@
+<div class="ui raised very padded text container segment">
+  <div class="ui container">
+    <book-form></book-form>
+  </div>
+</div>
+<div class="ui raised very padded text container segment">
+  <div class="ui container">
+    <book-list *ngFor='let book of books' [book]='book'>
+    </book-list>
+  </div>
+</div>

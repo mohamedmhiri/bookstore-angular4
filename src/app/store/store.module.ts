@@ -20,7 +20,6 @@ import { CreditNumberComponent } from './credit-number/credit-number.component';
 // ng2Semantic module
 import { SuiModule } from 'ng2-semantic-ui';
 // ng-semantic modules
-import { NgSemanticModule } from 'ng-semantic';
 
 const ROUTES = [
    /*{
@@ -69,8 +68,6 @@ const ROUTES = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(ROUTES),
-    /*SuiModule,
-    NgSemanticModule,*/
     CollectionModule
  ],
   declarations: [

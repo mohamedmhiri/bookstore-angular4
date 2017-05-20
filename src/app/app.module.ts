@@ -1,3 +1,4 @@
+import { Book } from './models/book';
 import { CollectionModule } from './collection.module';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -46,7 +47,6 @@ import { StoreComponent } from './store/store.component';
     AuthModule,
     AdminModule,
     CollectionModule
-    //NgSemanticModule,
     //RouterModule.forRoot(ROUTES)
   ],
   exports: [
