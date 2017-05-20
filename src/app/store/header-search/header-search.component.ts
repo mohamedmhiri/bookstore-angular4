@@ -1,15 +1,48 @@
+import { BookService } from './../../services/book.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'store-header-search',
   templateUrl: './header-search.component.html',
-  styleUrls: ['./header-search.component.css']
+  styleUrls: ['./header-search.component.css'],
+  providers: [BookService]
 })
 export class HeaderSearchComponent implements OnInit {
 
-  constructor() { }
+  books: any[];
+
+  book: any = {
+
+    attr: 'RapidSearch'
+  }
+
+  constructor(private bookService: BookService) { }
 
   ngOnInit() {
+    this.book = {
+
+      attr: ''
+    }
   }
+
+  public save(isValid: boolean, f: any, book: any) {
+    if (f) {
+      console.log(book)
+      this.bookService.getBookAdvancedSearch(book).subscribe(books => {
+        this.books = books;
+        console.log(books)
+      })
+    }
+  }
+
+  public getBookRapidSearch(book) {
+    console.log(book)
+    this.bookService.getBookRapidSearch(book).subscribe(books => {
+      this.books = books
+      console.log("from catalog")
+      console.log(books)
+    })
+  }
+
 
 }

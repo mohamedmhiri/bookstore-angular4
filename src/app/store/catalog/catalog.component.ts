@@ -32,13 +32,20 @@ export class CatalogComponent implements OnInit {
   ngOnInit() {
     this.isCompleted = false
     this.booksService.getAllBooks().subscribe(books => {
-        this.books = books
-        
+      this.books = books
+
     },
       err => console.error(err),
       () => this.isCompleted = true
-      
+
     )
+    if (Cookie.get('angular-cookie') != null) {
+      this.cartsService.getCartById(+Cookie.get('angular-cookie'))
+      .subscribe(data => {
+        this.cart = data
+      })
+    }
+
   }
 
   public getBookAdvancedSearch(book) {
@@ -63,12 +70,25 @@ export class CatalogComponent implements OnInit {
 
 
 
+
+
+      console.log(this.cart)
+
       this.cart.books.push(book._id)
       this.cart.TotalQty += 1
 
       this.cartsService.addCart(this.cart).subscribe(data => {
+
         
           Cookie.set('angular-cookie', data._id)
+
+        console.log('Success' + data)
+        //this.books.push(book);
+        console.log(Cookie.get('angular-cookie'))
+        if (Cookie.get('angular-cookie') === null) {
+          Cookie.set('angular-cookie', data._id)
+        }
+
       })
     }
 

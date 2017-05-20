@@ -105,7 +105,7 @@ export class CartComponent implements OnInit, OnChanges, DoCheck {
       console.log(data)
       Cookie.set('angular-command', data._id)
     })
-
+    Cookie.delete('angular-cookie')
   }
 }
 
