@@ -23,12 +23,16 @@ export class CreditNumberComponent implements OnInit {
         console.log(data)
         // to be managed
         var doc = new jsPDF();
-        doc.text(20, 20, `Bill N° ${data._id}
+        doc.text(20, 10, `Bill N° ${data._id}
         Bill's date ${data.date}`);
+
+         doc.text(20, 10, `Books`);
+        doc.text(40, 10, `Quantity`);
+        doc.text(40, 10, `Price`);
         data.books.forEach((element, key) => {
           doc.text(20, 30 + (key * 10), `Books: ${element.name}`)
-          doc.text(30, 30 + (key * 20),`${element.TotalQty}`)
-          doc.text(40, 30 + (key * 30),`${element.oldPrice}`)
+          doc.text(30, 50 + (key * 10),`Quantity ${element.TotalQty} `)
+          doc.text(40, 70 + (key * 10),`${element.oldPrice}`)
           //        doc.addImage(element.img, 'JPEG', 15, 40, 180, 160)
 
         });

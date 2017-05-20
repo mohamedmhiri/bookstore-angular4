@@ -55,21 +55,33 @@ export class CatalogComponent implements OnInit {
     })
   }
   public addToCart(book) {
+   
     if (book.isDeleted === 0) // book exists
     {
+
       console.log('cart will be added')
 
+
+
+
+
       console.log(this.cart)
+
       this.cart.books.push(book._id)
       this.cart.TotalQty += 1
 
       this.cartsService.addCart(this.cart).subscribe(data => {
+
+        
+          Cookie.set('angular-cookie', data._id)
+
         console.log('Success' + data)
         //this.books.push(book);
         console.log(Cookie.get('angular-cookie'))
         if (Cookie.get('angular-cookie') === null) {
           Cookie.set('angular-cookie', data._id)
         }
+
       })
     }
 
