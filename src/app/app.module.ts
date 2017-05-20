@@ -1,3 +1,4 @@
+import { CollectionModule } from './collection.module';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -21,63 +22,36 @@ import { AppConfig } from './config/app-config';
 import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
 import { StoreModule } from './store/store.module';
-/*import { AppRouterModule } from './app-router/app-router.module';
-*/import { BrowserModule } from '@angular/platform-browser';
+import { AppRouterModule } from './app-router/app-router.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
 import { StoreComponent } from './store/store.component';
-import { SuiModule } from 'ng2-semantic-ui';
-
-const ROUTES = [
-    {
-        path: '',
-        redirectTo: 'store',
-        pathMatch: 'full'
-    },
-    /*{
-        path: 'categories',
-        component: CategoriesComponent
-    },*/
-    /*{
-        path: 'books',
-        component: BooksComponent
-    },*/
-    {
-        path: 'store',
-        loadChildren: './store/store.module#StoreModule',
-        component:StoreComponent
-    },
-    {
-        path: 'admin',
-        loadChildren: './admin/admin.module#AdminModule'
-    }
-]
-
-
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
-    StoreComponent,
-    LoginComponent
+    StoreComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-/*    AppRouterModule,
-*/    
+    AppRouterModule,
     StoreModule,
     AuthModule,
     AdminModule,
-    SuiModule,
-    RouterModule.forRoot(ROUTES)
+    CollectionModule
+    //NgSemanticModule,
+    //RouterModule.forRoot(ROUTES)
   ],
   exports: [
+    LoginComponent,
+    CollectionModule
   ],
   providers: [
     AppConfig,

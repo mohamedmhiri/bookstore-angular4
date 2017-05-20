@@ -10,23 +10,35 @@ import { Cookie } from 'ng2-cookies/ng2-cookies';
   providers: [BookService, CartService]
 })
 export class CatalogComponent implements OnInit {
-
+  isCompleted: boolean = true
   books: any = []
 
   cart = {
-  
+
     isDeleted: 0,
     TotalQty: 0,
     books: []
   }
 
   constructor(private booksService: BookService, private cartsService: CartService) {
-    this.booksService.getAllBooks().subscribe(books => {
-      this.books = books
-    })
+    this.complete();
+  }
+  complete() {
+    setTimeout(() => {
+      this.isCompleted = true;
+    }, 3000);
   }
 
   ngOnInit() {
+    this.isCompleted = false
+    this.booksService.getAllBooks().subscribe(books => {
+        this.books = books
+        
+    },
+      err => console.error(err),
+      () => this.isCompleted = true
+      
+    )
   }
 
   public getBookAdvancedSearch(book) {
@@ -46,6 +58,11 @@ export class CatalogComponent implements OnInit {
    
     if (book.isDeleted === 0) // book exists
     {
+
+      console.log('cart will be added')
+
+
+
       this.cart.books.push(book._id)
       this.cart.TotalQty += 1
 

@@ -1,3 +1,4 @@
+import { CollectionModule } from './../collection.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -16,6 +17,10 @@ import { ResearchComponent } from './research/research.component';
 import { CartComponent } from './cart/cart.component';
 import { CreditNumberComponent } from './credit-number/credit-number.component';
 
+// ng2Semantic module
+import { SuiModule } from 'ng2-semantic-ui';
+// ng-semantic modules
+import { NgSemanticModule } from 'ng-semantic';
 
 const ROUTES = [
    /*{
@@ -51,6 +56,10 @@ const ROUTES = [
     {
         path: 'credit',
         component: CreditNumberComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     }
 
 
@@ -59,7 +68,10 @@ const ROUTES = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(ROUTES)
+    RouterModule.forChild(ROUTES),
+    /*SuiModule,
+    NgSemanticModule,*/
+    CollectionModule
  ],
   declarations: [
     HeaderComponent,
@@ -83,7 +95,8 @@ const ROUTES = [
   ],
   providers: [
 /*    MainContentComponent,
-*/    CatalogComponent
+*/    CatalogComponent,
+    LoginComponent
   ]
 })
 export class StoreModule { }
