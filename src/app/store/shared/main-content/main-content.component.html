@@ -1,5 +1,19 @@
-<store-header></store-header>
-<!--<book-catalog></book-catalog>
--->
+<br><br><br><br>
+<div class="ui raised very padded text container piled segments">
+    <div class="ui segment">
+        <div class="ui left rail">
+            <div class="ui segment">
+                <app-research (search)="search($event)"></app-research>
+            </div>
+        </div>
+        <div class="ui segment">
 
-<store-footer></store-footer>
+            <!--<div class="ui raised very padded text container segment">-->
+            <div class="ui four column doubling grid">
+                <book-catalog *ngFor="let book of books" [book]='book'></book-catalog>
+            </div>
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<br><br><br><br>

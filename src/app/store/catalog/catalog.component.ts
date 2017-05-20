@@ -1,6 +1,7 @@
+import { Book } from './../../models/book';
 import { CartService } from './../../services/cart.service';
 import { BookService } from './../../services/book.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Cookie } from 'ng2-cookies/ng2-cookies';
 
 @Component({
@@ -10,7 +11,7 @@ import { Cookie } from 'ng2-cookies/ng2-cookies';
   providers: [BookService, CartService]
 })
 export class CatalogComponent implements OnInit {
-  isCompleted: boolean = true
+  @Input() book: Book
   books: any = []
 
   cart = {
@@ -19,31 +20,23 @@ export class CatalogComponent implements OnInit {
     TotalQty: 0,
     books: []
   }
+  buttonClass: string = 'ui vertical animated button'
 
   constructor(private booksService: BookService, private cartsService: CartService) {
-    this.complete();
-  }
-  complete() {
-    setTimeout(() => {
-      this.isCompleted = true;
-    }, 3000);
   }
 
   ngOnInit() {
-    this.isCompleted = false
-    this.booksService.getAllBooks().subscribe(books => {
+    /*this.booksService.getAllBooks().subscribe(books => {
       this.books = books
 
-    },
-      err => console.error(err),
-      () => this.isCompleted = true
+    }
 
-    )
+    )*/
     if (Cookie.get('angular-cookie') != null) {
       this.cartsService.getCartById(+Cookie.get('angular-cookie'))
-      .subscribe(data => {
-        this.cart = data
-      })
+        .subscribe(data => {
+          this.cart = data
+        })
     }
 
   }
@@ -93,6 +86,7 @@ export class CatalogComponent implements OnInit {
     
     Cookie.delete('cookieName');
     Cookie.deleteAll();*/
+    this.buttonClass = 'ui disabled vertical animated button'
   }
 
 }

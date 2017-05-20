@@ -29,7 +29,7 @@ const ROUTES = [
    },*/
     {
         path: '', 
-        component:ResearchComponent
+        component:MainContentComponent
     },
     {
         path: 'header', 
@@ -59,6 +59,10 @@ const ROUTES = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+        path: 'main',
+        component: MainContentComponent
     }
 
 
