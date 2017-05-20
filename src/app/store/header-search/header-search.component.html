@@ -1,9 +1,31 @@
 <div class="right item ui action input">
-  <input type="text" placeholder="Search...">
+  <!--
+    <input type="text" placeholder="Search...">
   <div class="inverted button">
     <a class="item" routerLink='catalog'>
       Search
     </a>
   </div>
+  -->
+  <form #f="ngForm" novalidate>
+    <input type="text" name="attr" [(ngModel)]=book.attr placeholder="Search...">
+    <div class="inverted button" (click)="getBookRapidSearch(book)">
+      <a class="item" routerLink='catalog'>
+        Search
+      </a>
+    </div>
 
+
+
+<!--      <div class="field">
+        <input  placeholder="rapid-search">
+      </div>-->
+<!--    </div>
+-->   <!-- <div class="ui button" tabindex="0">-->
+      <!--button type="submit" (click)="save(f.value, f.valid,book)">Submit</button-->
+ <!--     <button type="submit" >Submit</button>
+
+    </div>-->
+    <!--<book-catalog #c></book-catalog>-->
+  </form>
 </div>

@@ -37,6 +37,7 @@ export class CreditNumberComponent implements OnInit {
         // Save the PDF
         doc.save('Test.pdf');
     })
+    Cookie.delete('angular-command')
   }
   
 }

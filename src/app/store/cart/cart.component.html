@@ -23,7 +23,7 @@
               </div>
             </td>
             <td>{{book.name}}</td>
-            <td><input  type="number"  name="quantity"  [(ngModel)]="book.TotalQty" ></td>
+            <td><input  type="number"  name="quantity"  [(ngModel)]="book.TotalQty >= book.availableBooks ?  book.availableBooks : book.TotalQty" ></td>
             <td><input [value]="book.oldPrice" readonly [(ngModel)]="book.oldPrice" name="price"></td>
             <td>{{book.TotalQty * book.oldPrice}}</td>
             
