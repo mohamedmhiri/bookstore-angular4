@@ -1,5 +1,6 @@
+import { Book } from './../../models/book';
 import { BookService } from './../../services/book.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'store-header-search',
@@ -15,7 +16,7 @@ export class HeaderSearchComponent implements OnInit {
 
     attr: 'RapidSearch'
   }
-
+ @Output() search = new EventEmitter<Book>()
   constructor(private bookService: BookService) { }
 
   ngOnInit() {
@@ -38,9 +39,7 @@ export class HeaderSearchComponent implements OnInit {
   public getBookRapidSearch(book) {
     console.log(book)
     this.bookService.getBookRapidSearch(book).subscribe(books => {
-      this.books = books
-      console.log("from catalog")
-      console.log(books)
+      this.search.emit(books)
     })
   }
 

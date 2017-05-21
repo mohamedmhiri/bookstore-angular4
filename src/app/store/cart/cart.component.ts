@@ -18,7 +18,7 @@ export class CartComponent implements OnInit, OnChanges, DoCheck {
   total: number = 0;
 
   cart = {
-
+    _id:+Cookie.get('angular-cookie'),
     isDeleted: 0,
     books: [],
     TotalPrice: this.total,
@@ -33,8 +33,10 @@ export class CartComponent implements OnInit, OnChanges, DoCheck {
   ngOnInit() {
     this.cartService.getCartById(+Cookie.get('angular-cookie')).subscribe(data => {
       console.log(data)
-      console.log('cart' + data.books[0].name)
+    
       this.books = data.books
+      console.log('get cart books')
+      console.log(data.books)
       this.books.forEach(element => {
          let max=[]
          for(let i=1; i<= element.inMarket ; i++)
@@ -76,8 +78,9 @@ export class CartComponent implements OnInit, OnChanges, DoCheck {
     console.log(id)
     this.books.splice(id, 1)
 
-    this.cart.books = this.books
+    this.cart.books=this.books
     this.cartService.removeBookFromCart(this.cart).subscribe(data => {
+    //  this.books = data.books
       console.log(data)
     })
 

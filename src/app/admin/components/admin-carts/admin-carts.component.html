@@ -1,0 +1,10 @@
+<div class="ui raised very padded text container segment">
+  <div class="ui container">
+    <cart-form></cart-form>
+  </div>
+</div>
+<div class="ui raised very padded text container segment">
+  <div class="ui container">
+    <cart-list *ngFor='let cart of carts' [cart]='cart'></cart-list>
+  </div>
+</div>

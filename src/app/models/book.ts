@@ -1,4 +1,6 @@
+import { Category } from './caterogy';
 export class Book {
+    _id: number
     oldPrice: number
     recentPrice: number
     availableBooks: number
@@ -9,4 +11,9 @@ export class Book {
     editionDate: string
     author: string
     edition: string
+    isDeleted: number
+    commands: any[]
+    category: number
+    carts: any[]
+
 }

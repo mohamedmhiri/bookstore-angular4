@@ -1,7 +1,6 @@
 import { Book } from './book';
-export class Cart {
+export class Command {
     _id: number
     date: Date
-    TotalQty: number
     books: Book[]
 }

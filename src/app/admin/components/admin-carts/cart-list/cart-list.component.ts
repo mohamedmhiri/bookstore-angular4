@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Cart } from './../../../../models/cart';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'cart-list',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartListComponent implements OnInit {
 
+  @Input() cart: Cart
   constructor() { }
 
   ngOnInit() {

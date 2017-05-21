@@ -8,11 +8,18 @@ declare let jsPDF;
 })
 export class LoginComponent implements OnInit {
 
+  login= {
+    email: '' ,
+    password: ''
+  }
   constructor(private auth: Auth) {}
 
   ngOnInit() {
+    this.login.email = 'enter your e-mail'
+    this.login.password = 'enter your password'
+    
   }
-  public download() {
+  /*public download() {
         
         var doc = new jsPDF();
         doc.text(20, 20, 'Hello world!');
@@ -21,6 +28,7 @@ export class LoginComponent implements OnInit {
         doc.text(20, 20, 'Do you like that?');
         // Save the PDF
         doc.save('Test.pdf');
-  }
+  }*/
+
 
 }

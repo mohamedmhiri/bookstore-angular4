@@ -1,25 +1,39 @@
-<div class="ui fixed inverted menu">
+<div class="ui fixed inverted small menu">
   <div class="ui container">
-    <a href="#" class="header item">
+    <a routerLink='' class="header item">
       <img class="logo" src="../../../../../public/img/logo.png">
       <br>jeBouquine
     </a>
     <a class="item" routerLink=''>
         Home
       </a>
-    <a class="item" routerLink=''>
+    <a class="item" routerLink='about-us'>
         About Us
       </a>
-    <store-header-search class="right item ui action input"></store-header-search>
-
-    <a class="item" routerLink='cart'>
-      <i class="big icons">
+    <!--    <store-header-search class="right item ui action input"></store-header-search>
+-->
+    <div class="right menu">
+      <a class="item" routerLink='cart'>
+        <i class="big icons">
               <i class="inverted shop icon"></i>
-      <i class="grey corner add icon"></i>
-      </i>
-    </a>
+        <i class="grey corner add icon"></i>
+        </i>
+      </a>
+      <a class="item" *ngIf="!auth.isAuthenticated()" routerLink='login'>
+        Sign In
+      </a>
+      <a class="item" (click)="auth.logout()" *ngIf="auth.isAuthenticated()" routerLink='#'>
+        Logout
+      </a>
+      <a class="item" *ngIf="!auth.isAuthenticated()" routerLink='login'>
+        Sign Up
+      </a>
+    </div>
 
-    <!--<div class="right menu">
+  </div>
+
+
+  <!--<div class="right menu">
     <div class="ui dropdown item">
       Language <i class="dropdown icon"></i>
       <div class="menu">
@@ -29,14 +43,5 @@
       </div>
     </div>
     </div>-->
-    <a class="item" *ngIf="!auth.isAuthenticated()" routerLink='login'>
-        Sign In
-      </a>
-      <a class="item" (click)="auth.logout()" *ngIf="auth.isAuthenticated()" routerLink='#'>
-        Logout
-      </a>
-    <a class="item" *ngIf="!auth.isAuthenticated()" routerLink='login'>
-        Sign Up
-      </a>
-  </div>
+
 </div>

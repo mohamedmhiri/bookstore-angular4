@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Command } from './../../../../models/command';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'command-list',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./command-list.component.css']
 })
 export class CommandListComponent implements OnInit {
-
+  
+  @Input() command: Command
   constructor() { }
 
   ngOnInit() {

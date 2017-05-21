@@ -1,0 +1,18 @@
+<sui-accordion class="styled fluid">
+  <sui-accordion-panel>
+    <div title>
+      <i class="dropdown icon"></i> Number: {{category._id}}
+<!--      <div (click)="delete(i, movie)">
+-->        <i class="trash outline icon"></i>
+  <!--    </div>
+      <div (click)="update(i, movie)">-->
+        <i class="edit icon"></i>
+<!--      </div>
+-->    </div>
+    <div content>
+      <p>{{ category.name }}</p>
+      <p>category's books:</p>
+      <p *ngFor="let book of cart.books">{{book.name}}</p>
+    </div>
+  </sui-accordion-panel>
+</sui-accordion>

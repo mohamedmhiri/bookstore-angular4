@@ -19,6 +19,7 @@ import { CreditNumberComponent } from './credit-number/credit-number.component';
 
 // ng2Semantic module
 import { SuiModule } from 'ng2-semantic-ui';
+import { AboutUsComponent } from './about-us/about-us.component';
 // ng-semantic modules
 
 const ROUTES = [
@@ -63,6 +64,10 @@ const ROUTES = [
     {
         path: 'main',
         component: MainContentComponent
+    },
+    {
+        path: 'about-us',
+        component: AboutUsComponent
     }
 
 
@@ -84,7 +89,8 @@ const ROUTES = [
     CatalogComponent,
     ResearchComponent,
     CartComponent,
-    CreditNumberComponent
+    CreditNumberComponent,
+    AboutUsComponent
   ],
   exports: [
     HeaderComponent,

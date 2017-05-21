@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   dropDown: string = ''
+  
   constructor(private auth: Auth) {}
   ngOnInit() {
   }

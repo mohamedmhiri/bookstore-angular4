@@ -37,7 +37,7 @@ export class BookService {
 
 
     getBookById(_id) {
-        return this.http.get(`${this.url}books/${_id}`)
+        return this.http.get(`${this.url}books/${_id}/book`)
             .map(res => res.json());
 
     }
