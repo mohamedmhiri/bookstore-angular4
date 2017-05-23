@@ -1,3 +1,4 @@
+import { StoreRouterModule } from './store-router/store-router.module';
 import { CollectionModule } from './../collection.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -22,63 +23,13 @@ import { SuiModule } from 'ng2-semantic-ui';
 import { AboutUsComponent } from './about-us/about-us.component';
 // ng-semantic modules
 
-const ROUTES = [
-   /*{
-        path: '',
-        redirectTo: 'research',
-        pathMatch: 'full'
-   },*/
-    {
-        path: '', 
-        component:MainContentComponent
-    },
-    {
-        path: 'header', 
-        component: HeaderComponent
-    },
-    {
-        path: 'footer', 
-        component: FooterComponent
-    },
-    {
-        path: 'catalog', 
-        component: CatalogComponent
-    },
 
-     {
-        path: 'research', 
-        component: ResearchComponent
-    },
-    {
-         path: 'cart', 
-        component: CartComponent
-    },
-    {
-        path: 'credit',
-        component: CreditNumberComponent
-    },
-    {
-        path: 'login',
-        component: LoginComponent
-    },
-    {
-        path: 'main',
-        component: MainContentComponent
-    },
-    {
-        path: 'about-us',
-        component: AboutUsComponent
-    }
-
-
-]
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(ROUTES),
     CollectionModule,
-   
+    StoreRouterModule
  ],
   declarations: [
     HeaderComponent,

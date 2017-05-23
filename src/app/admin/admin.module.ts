@@ -21,14 +21,17 @@ import { CartListComponent } from './components/admin-carts/cart-list/cart-list.
 import { CartFormComponent } from './components/admin-carts/cart-form/cart-form.component';
 import { CommandListComponent } from './components/admin-commands/command-list/command-list.component';
 import { CommandFormComponent } from './components/admin-commands/command-form/command-form.component';
-
+import { BookPusherComponent } from './components/admin-books/book-list/book-pusher/book-pusher.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BookGeneratorComponent } from './components/admin-books/book-generator/book-generator.component';  // <-- #1 import module
 
 @NgModule({
   imports: [
     CommonModule,
     SuiModule,
     AdminRouterModule,
-    CollectionModule
+    CollectionModule,
+    ReactiveFormsModule
   ],
   declarations: [
     SidebarComponent,
@@ -47,6 +50,8 @@ import { CommandFormComponent } from './components/admin-commands/command-form/c
     CartFormComponent,
     CommandListComponent,
     CommandFormComponent,
+    BookPusherComponent,
+    BookGeneratorComponent,
 
   ],
   exports: [

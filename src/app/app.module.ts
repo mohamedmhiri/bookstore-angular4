@@ -1,7 +1,7 @@
 import { Book } from './models/book';
 import { CollectionModule } from './collection.module';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { Component } from '@angular/core';
@@ -41,6 +41,7 @@ import { StoreComponent } from './store/store.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AppRouterModule,
     StoreModule,

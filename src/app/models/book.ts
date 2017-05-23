@@ -13,7 +13,6 @@ export class Book {
     edition: string
     isDeleted: number
     commands: any[]
-    category: number
+    category: Category
     carts: any[]
-
 }

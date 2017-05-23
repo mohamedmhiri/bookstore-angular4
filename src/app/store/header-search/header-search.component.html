@@ -6,17 +6,12 @@
     </a>
   </div>
   -->
-
           <form #f="ngForm" novalidate>
-            <input type="text" name="attr" [(ngModel)]=book.attr placeholder="Search...">
-            <div class="inverted button" (click)="getBookRapidSearch(book)">
-              <a class="item">
-                Search
-              </a>
+            <div class="ui icon input">
+            <input type="text" name="attr" (keyup.enter)="getBookRapidSearch(book)" [(ngModel)]=book.attr placeholder="Search...">
+            <i class="search icon"></i>
             </div>
           </form>
-
-
 
   <!--      <div class="field">
         <input  placeholder="rapid-search">
