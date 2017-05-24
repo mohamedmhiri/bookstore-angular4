@@ -66,7 +66,10 @@ export class BookService {
     updateBook(book) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.put(`${this.url}books/${book._id}/update`, JSON.stringify(book), { headers: headers }).map(response => response.json());
+        return this.http.put(`${this.url}books/${book._id}/update`,
+         JSON.stringify(book),
+          { headers: headers })
+          .map(response => response.json());
 
     }
 }

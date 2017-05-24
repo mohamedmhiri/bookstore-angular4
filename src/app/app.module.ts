@@ -25,6 +25,7 @@ import { AuthModule } from './auth/auth.module';
 import { StoreModule } from './store/store.module';
 import { AppRouterModule } from './app-router/app-router.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxPaginationModule } from 'ngx-pagination'; // <-- import the module
 
 
 import { AppComponent } from './app.component';
@@ -47,7 +48,8 @@ import { StoreComponent } from './store/store.component';
     StoreModule,
     AuthModule,
     AdminModule,
-    CollectionModule
+    CollectionModule,
+    NgxPaginationModule
     //RouterModule.forRoot(ROUTES)
   ],
   exports: [

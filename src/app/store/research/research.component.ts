@@ -18,14 +18,14 @@ export class ResearchComponent implements OnInit {
     author: 'auhtor name',
     editionDate: 2000,
     edition: '',
-    priceMin : 0 ,
-    priceMax:0,
+    priceMin: 0,
+    priceMax: 0,
     category: ''
   }
   @Output() search = new EventEmitter<Book>()
 
   constructor(private categoryService: CategoryService,
-    private bookService: BookService){
+    private bookService: BookService) {
     this.categoryService.getAllCategories().subscribe(categories => {
       this.categories = categories
     })
@@ -37,7 +37,7 @@ export class ResearchComponent implements OnInit {
       author: null,
       editionDate: null,
       edition: null,
-      priceMin : 10,
+      priceMin: 10,
       priceMax: 500,
       categories: this.categories,
       category: null
@@ -46,13 +46,10 @@ export class ResearchComponent implements OnInit {
 
   public getBookAdvancedSearch(book) {
     this.bookService.getBookAdvancedSearch(book).subscribe(books => {
-      //this.books = books
       this.search.emit(books)
     })
-    //this.search.emit(book)
-    console.log(book)
   }
 
-  
+
 
 }

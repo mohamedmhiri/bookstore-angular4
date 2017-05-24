@@ -9,31 +9,31 @@
   <div class="field">
     <label>Book Name</label>
     <div class="field">
-      <input type="text" name="name" [(ngModel)]=book.name placeholder="Book Name">
+      <input type="text" name="name" (keyup)="getBookAdvancedSearch(book)" [(ngModel)]=book.name placeholder="Book Name">
     </div>
   </div>
   <div class="field">
     <label>Author Name</label>
     <div class="field">
-      <input type="text" name="author" [(ngModel)]=book.author placeholder="Author Name">
+      <input type="text" name="author" (keyup)="getBookAdvancedSearch(book)" [(ngModel)]=book.author placeholder="Author Name">
     </div>
   </div>
   <div class="field">
     <label>Edition Name</label>
     <div class="field">
-      <input type="text" name="edition" [(ngModel)]=book.edition placeholder="Edition Name">
+      <input type="text" name="edition" (keyup)="getBookAdvancedSearch(book)" [(ngModel)]=book.edition placeholder="Edition Name">
     </div>
   </div>
   <div class="field">
     <label>Edition Date</label>
     <div class="field">
-      <input type="text" name="editionDate" [(ngModel)]=book.editionDate placeholder="Edition Date">
+      <input type="text" name="editionDate" (keyup)="getBookAdvancedSearch(book)" [(ngModel)]=book.editionDate placeholder="Edition Date">
     </div>
   </div>
   <div class="field">
     <label>Category</label>
     <select name="category" [(ngModel)]="book.category">
-                  <option *ngFor="let category of categories" [value]="category._id">  
+                  <option *ngFor="let category of categories" (click)="getBookAdvancedSearch(book)"[value]="category._id">  
                   {{category.name}}
                   </option>
                 </select>
@@ -41,13 +41,14 @@
   <div class="field">
 
     <label for="price-min">Price Min:</label>
-    <input type="number" name="priceMin" id="price-min" min="10" max="500" [(ngModel)]="book.priceMin">
+    <input type="number" name="priceMin" (keyup)="getBookAdvancedSearch(book)" id="price-min" min="10" max="500" [(ngModel)]="book.priceMin">
 
     <label for="price-max">Price Max:</label>
-    <input type="number" name="priceMax" id="price-max" min="10" max="500" [(ngModel)]="book.priceMax">
+    <input type="number" name="priceMax" (keyup)="getBookAdvancedSearch(book)" id="price-max" min="10" max="500" [(ngModel)]="book.priceMax">
   </div>
 
   <button class="ui button" type="submit" (click)="getBookAdvancedSearch(book)">Submit</button>
+  <button class="ui button" type="submit" (click)="ngOnInit(); getBookAdvancedSearch(book)">Reset</button>
 </form>
 <!--  </div>
   </div>-->

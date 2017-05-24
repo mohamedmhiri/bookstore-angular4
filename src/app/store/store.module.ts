@@ -21,7 +21,12 @@ import { CreditNumberComponent } from './credit-number/credit-number.component';
 // ng2Semantic module
 import { SuiModule } from 'ng2-semantic-ui';
 import { AboutUsComponent } from './about-us/about-us.component';
-// ng-semantic modules
+import { TabComponent } from './shared/tab/tab.component';
+import { CardImageComponent } from './catalog/card-image/card-image.component';
+import { CardButtonComponent } from './catalog/card-button/card-button.component';
+import { CardTitleComponent } from './catalog/card-title/card-title.component';
+import { CardPriceComponent } from './catalog/card-price/card-price.component';
+import { BookViewComponent } from './item/book-view/book-view.component';
 
 
 @NgModule({
@@ -29,7 +34,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     CommonModule,
     FormsModule,
     CollectionModule,
-    StoreRouterModule
+    StoreRouterModule,
  ],
   declarations: [
     HeaderComponent,
@@ -41,7 +46,13 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ResearchComponent,
     CartComponent,
     CreditNumberComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    TabComponent,
+    CardImageComponent,
+    CardButtonComponent,
+    CardTitleComponent,
+    CardPriceComponent,
+    BookViewComponent
   ],
   exports: [
     HeaderComponent,

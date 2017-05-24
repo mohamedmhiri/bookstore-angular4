@@ -1,3 +1,4 @@
+import { ErrorComponent } from './../error/error.component';
 import { HeaderComponent } from './../shared/header/header.component';
 import { FooterComponent } from './../shared/footer/footer.component';
 import { CatalogComponent } from './../catalog/catalog.component';
@@ -57,6 +58,10 @@ const ROUTES = [
     {
         path: 'about-us',
         component: AboutUsComponent
+    },
+    {
+        path: '**',
+        component: ErrorComponent
     }
 
 

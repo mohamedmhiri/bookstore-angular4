@@ -37,7 +37,6 @@ export class HeaderSearchComponent implements OnInit {
   }
 
   public getBookRapidSearch(book) {
-    console.log(book)
     this.bookService.getBookRapidSearch(book).subscribe(books => {
       this.search.emit(books)
     })

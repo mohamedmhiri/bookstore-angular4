@@ -1,4 +1,3 @@
-<br><br><br><br><br>
 <!--<div class="ui segment">-->
 <!--  <div class="{{isCompeted ? '': 'ui active inverted dimmer'}}">
     <div class="{{isCompeted ? '' : 'ui large text loader'}}"></div>
@@ -8,32 +7,26 @@
 <!--<div class="ui four column grid">-->
 <!--<div class="ui four column doubling grid">
 -->
-  <div class="column">
-    <div class="ui card">
-      <div class="ui small image">
-        <img src="{{book.image}}">
-      </div>
-      <div class="left aligned eight wide column">
-        <div class="ui three column grid">
-          <div class="column">
-            {{book.name}}
-          </div>
-        </div>
-      </div>
-      <!--<div class="content">
+<div class="ui small image">
+  <img src="{{book.image}}">
+</div>
+<div class="column">
+  {{book.name}}
+</div>
+<!--<div class="content">
             <div class="header">{{book.name}}</div>
             <div class="meta">
               <a>more details</a>
             </div>-->
-      <!--<div class="description">
+<!--<div class="description">
             {{book.description}}
           </div>-->
-      <!--</div>-->
-      <div class="extra content">
-        <span class="right floated">
-              {{book.price}}
-            </span>
-        <span>
+<!--</div>-->
+<div>
+  {{book.price}}
+</div>
+
+<span>
               <div class={{buttonClass}} tabindex="0">
                 <div  (click)="addToCart(book)"  class="hidden content">
                 Shop
@@ -43,16 +36,14 @@
                 </div>
               </div>
             </span>
-      </div>
-    </div>
-  </div>
 <!--</div>
--->  <!--    </div>
+-->
+<!--    </div>
   </div>
 </div>-->
-  <!--<div class="ui segment">
+<!--<div class="ui segment">
 -->
-  <!--<div class="ui top attached tabular menu">
+<!--<div class="ui top attached tabular menu">
     <a class="item" data-tab="first">First</a>
     <a class="item" data-tab="second">Second</a>
     <a class="item active" data-tab="third">Third</a>
@@ -67,6 +58,5 @@
     Third
   </div>-->
 
-  <!--</div>
+<!--</div>
 -->
-  <br><br><br><br><br>

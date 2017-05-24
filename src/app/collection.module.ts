@@ -3,19 +3,22 @@ import { SuiModule } from 'ng2-semantic-ui';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination'; // <-- import the module
 
 @NgModule({
   imports: [
     CommonModule,
     SuiModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   declarations: [
     LoginComponent
 
   ],
   exports: [
-    LoginComponent
+    LoginComponent,
+    NgxPaginationModule
   ]
 })
 export class CollectionModule { }

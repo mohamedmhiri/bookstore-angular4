@@ -1,4 +1,4 @@
-  <!--
+<!--
     <input type="text" placeholder="Search...">
   <div class="inverted button">
     <a class="item" routerLink='catalog'>
@@ -6,22 +6,24 @@
     </a>
   </div>
   -->
-          <form #f="ngForm" novalidate>
-            <div class="ui icon input">
-            <input type="text" name="attr" (keyup.enter)="getBookRapidSearch(book)" [(ngModel)]=book.attr placeholder="Search...">
-            <i class="search icon"></i>
-            </div>
-          </form>
+<form #f="ngForm" novalidate>
+  <div class="ui category search">
+    <div class="ui icon input">
+      <input type="text" class="prompt" name="attr" (blur)="getBookRapidSearch(book)" (keyup)="getBookRapidSearch(book)" (keyup.enter)="getBookRapidSearch(book)" [(ngModel)]=book.attr placeholder="Search...">
+      <i class="search icon"></i>
+    </div>
+  </div>
+</form>
 
-  <!--      <div class="field">
+<!--      <div class="field">
         <input  placeholder="rapid-search">
       </div>-->
-  <!--    </div>
+<!--    </div>
 -->
-  <!-- <div class="ui button" tabindex="0">-->
-  <!--button type="submit" (click)="save(f.value, f.valid,book)">Submit</button-->
-  <!--     <button type="submit" >Submit</button>
+<!-- <div class="ui button" tabindex="0">-->
+<!--button type="submit" (click)="save(f.value, f.valid,book)">Submit</button-->
+<!--     <button type="submit" >Submit</button>
 
     </div>-->
-  <!--    <book-catalog *ngFor='let book of books'></book-catalog>
+<!--    <book-catalog *ngFor='let book of books'></book-catalog>
 -->

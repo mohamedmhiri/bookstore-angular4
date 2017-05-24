@@ -1,28 +1,187 @@
-<br><br><br><br>
-<div class="ui secondary menu">
-    <div class="right menu">
-        <div class="item">
-            <div class="ui action left icon input">
-                <store-header-search (search)="search($event)"></store-header-search>
+<div class="ui four column doubling stackable grid container">
+    <div class="row">
+        <div class="column">
+            <p></p>
+            <p></p>
+        </div>
+        <div class="column">
+            <p></p>
+            <p></p>
+        </div>
+        <div class="column">
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <p></p>
+            <p></p>
+        </div>
+        <div class="column">
+            <p></p>
+            <p></p>
+        </div>
+        <div class="column">
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+    <div class="computer only row">
+        <div class="column">
+            <p></p>
+            <p></p>
+        </div>
+        <div class="column">
+            <p></p>
+            <p></p>
+        </div>
+        <div class="column">
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+
+</div>
+<!--<h3 class="ui center aligned header">Grid Container</h3>
+<div class="ui three column grid container">
+    <div class="column">
+        <div class="ui segment">Content</div>
+    </div>
+    <div class="column">
+        <div class="ui segment">Content</div>
+    </div>
+    <div class="column">
+        <div class="ui segment">Content</div>
+    </div>
+    <div class="column">
+        <div class="ui segment">Content</div>
+    </div>
+    <div class="column">
+        <div class="ui segment">Content</div>
+    </div>
+    <div class="column">
+        <div class="ui segment">Content</div>
+    </div>
+</div>-->
+
+<div class="ui internally celled grid">
+    <div class="row">
+        <div class="ui two column centered grid">
+            <store-header-search (search)="search($event)"></store-header-search>
+        </div>
+    </div>
+    <div class="row">
+        <div class="three wide column">
+            <app-research (search)="search($event)"></app-research>
+        </div>
+        <div class="ten wide column">
+
+            <div class="ui four column link stackable cards">
+                <div *ngFor="let book of books | paginate: { itemsPerPage: 10, currentPage: page }" class="card">
+                    <!--                    <div class="ui link cards">
+-->
+                    <div class="card">
+                        <div class="image">
+                            <card-image [book]="book"></card-image>
+                        </div>
+                        <div class="content">
+                            <div class="header">
+                                <card-title [book]="book"></card-title>
+                            </div>
+
+                            <!--<div class="description">
+                            Matthew is an interior designer living in New York.
+                        </div>-->
+                        </div>
+                        <div class="extra content">
+                            <span class="right floated">
+                                <card-button [book]="book"></card-button>
+                            </span>
+                            <span>
+                                <i class="dollar icon"></i>
+                                <card-price [book]="book"></card-price>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="has-text-centered">
+                <pagination-controls *ngIf="books.length > 0" (pageChange)="page = $event"></pagination-controls>
+            </div>
+            <!--<div class="has-text-centered">
+                <pagination-controls [id]="config.id"
+                    (pageChange)="onPageChange($event)">
+                 </pagination-controls>
+            </div>-->
+        </div>
+        <div class="three wide column">
+            <h2>Display Modes</h2>
+
+            <div class="ui medium vertical menu">
+                <app-tab *ngFor="let item of items" (tab)="display($event)" [item]="item"></app-tab>
             </div>
         </div>
     </div>
 </div>
+
+
+
+<!--
 <div class="ui raised very padded text container piled segments">
     <div class="ui segment">
-        <div class="ui left rail">
+        <div class="ui left attached rail">
+            <div class="ui segment">
+                <app-research (search)="search($event)"></app-research>
+            </div>
+        </div>
+        <div class="ui right attached rail">
             <div class="ui segment">
                 <app-research (search)="search($event)"></app-research>
             </div>
         </div>
         <div class="ui segment">
 
-            <!--<div class="ui raised very padded text container segment">-->
             <div class="ui four column doubling grid">
                 <book-catalog *ngFor="let book of books" [book]='book'></book-catalog>
             </div>
-            <!--</div>-->
         </div>
     </div>
+</div>-->
+<div class="ui four column doubling stackable grid container">
+    <div class="column">
+        <p></p>
+        <p></p>
+    </div>
+    <div class="column">
+        <p></p>
+        <p></p>
+    </div>
+    <div class="column">
+        <p></p>
+        <p></p>
+    </div>
+    <div class="column">
+        <p></p>
+        <p></p>
+    </div>
 </div>
-<br><br><br><br>
+
+<!--<div class="ui left fixed vertical menu">
+  <div class="item">
+    <img class="ui mini image" src="/images/logo.png">
+  </div>
+  <a class="item">Features</a>
+  <a class="item">Testimonials</a>
+  <a class="item">Sign-in</a>
+</div>
+<div class="ui right fixed vertical menu">
+  <div class="item">
+    <img class="ui mini image" src="/images/logo.png">
+  </div>
+  <a class="item">Features</a>
+  <a class="item">Testimonials</a>
+  <a class="item">Sign-in</a>
+</div>
+<p></p>
+<p></p>-->
