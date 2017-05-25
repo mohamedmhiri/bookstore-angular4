@@ -78,7 +78,7 @@
         <div class="ten wide column">
   
             <div class="ui four column link stackable cards">
-                <div *ngFor="let book of books" class="card" suiPopup popupHeader="Description" popupText="{{book.description}}">
+                <div *ngFor="let book of books" class="card" suiPopup popupHeader="Description" popupText="{{book.description.substring(0, 100)}}">
                     <!--                | paginate: { itemsPerPage: 10, currentPage: page }
 -->
                     <!--                                    | paginate: { itemsPerPage: 10, currentPage: page }

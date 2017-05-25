@@ -14,11 +14,17 @@
     </sui-accordion>
   </div>
 </div>-->
-<div class="ui primary dropdown button" suiDropdown [(isOpen)]="isOpen" [isDisabled]="false">
-  <div class="text">Add Books</div>
-  <i class="dropdown icon"></i>
-  <div class="ui tiny menu" suiDropdownMenu>
-    <book-generator *ngFor="let feed of booksFeed" class="item" [book]="feed" (parseBooks)="parseBooks($event)"></book-generator>
+<div class="ui three column stackable grid">
+  <div class="column"></div>
+  <div class="column"></div>
+  <div class="column">
+    <div class="ui primary dropdown button" suiDropdown [(isOpen)]="isOpen" [isDisabled]="false">
+      <div class="text" suiPopup popupHeader="Parse Rss Feed To Add all category's books'">Add Multiple books</div>
+      <i class="dropdown icon"></i>
+      <div class="ui tiny menu" suiDropdownMenu>
+        <book-generator *ngFor="let feed of booksFeed" class="item" [book]="feed" (parseBooks)="parseBooks($event)"></book-generator>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -30,7 +36,7 @@
 </div>
 <div class="ui raised very padded text container segment">
   <div class="ui container">
-    <book-list *ngFor='let book of books' [book]='book'(delete)="deleteBook(book)">
+    <book-list *ngFor='let book of books' [book]='book' (delete)="deleteBook(book)">
     </book-list>
   </div>
 </div>

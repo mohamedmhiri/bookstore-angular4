@@ -28,6 +28,7 @@ export class CartService {
     removeBookFromCart(cart) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
+        cart.isDeleted = 1
         return this.http.put(`${this.url}carts/update`, JSON.stringify(cart), { headers: headers }).map(response => response.json());
 
     }

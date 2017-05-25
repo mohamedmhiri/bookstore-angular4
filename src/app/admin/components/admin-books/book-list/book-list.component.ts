@@ -25,6 +25,11 @@ export class BookListComponent implements OnInit {
 
   updateBook(book) {
     this.updateForm = true
+    this.ngOnInit()
+  }
+
+  updated(val: boolean) {
+    this.updateForm = val
   }
 
 }

@@ -1,17 +1,17 @@
 <sui-accordion class="styled fluid">
   <sui-accordion-panel>
     <div title>
-    <div class="ui sixteen column stackable grid">
-      <div class="fourteen wide column">
-        <i class="dropdown icon"></i>{{book.name}}
+      <div class="ui sixteen column stackable grid">
+        <div class="fourteen wide column">
+          <i class="dropdown icon"></i>{{book.name}}
+        </div>
+        <div class="one wide column" (click)="deleteBook(book)">
+          <i class="trash outline icon"></i>
+        </div>
+        <div class="one wide column" (click)="updateBook(book)">
+          <i class="edit icon"></i>
+        </div>
       </div>
-      <div class="one wide column" (click)="deleteBook(book)">
-        <i class="trash outline icon"></i>
-      </div>
-      <div class="one wide column" (click)="updateBook(book)">
-        <i class="edit icon"></i>
-      </div>
-    </div>
 
       <!--<div class="three column row">
     <div class="column">
@@ -32,8 +32,35 @@
   </div>-->
     </div>
     <div content>
-      <p *ngIf='!updateForm'>{{ book.description }}</p>
-      <book-pusher *ngIf='updateForm' [book]="book"></book-pusher>
+      <div *ngIf='!updateForm' class="ui three column stackable grid">
+        <div class="sixteen wide column">
+          name: {{book.name}}
+        </div>
+        <div class="sixteen wide column">
+          description: {{book.description}}
+        </div>
+
+        <div class="column">
+          recent price: {{book.recentPrice}}
+        </div>
+        <div class="column">
+          old price: {{book.oldPrice}}
+        </div>
+        <div class="column">
+          total books added: {{book.inMarket}}
+        </div>
+        <div class="column">
+          available books: {{book.availableBooks}}
+        </div>
+        
+
+      </div>
+      <div *ngIf='updateForm' class="ui three column stackable grid">
+        <div class="sixteen wide column">
+          <book-pusher [book]="book" (updated)="updated($event)"></book-pusher>
+        </div>
+      </div>
+      
     </div>
   </sui-accordion-panel>
 </sui-accordion>

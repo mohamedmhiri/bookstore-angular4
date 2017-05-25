@@ -78,6 +78,7 @@ export class Auth {
     // Remove token from localStorage
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
+    this.router.navigate(['/store']);
   }
 
   private setUser(authResult): void {

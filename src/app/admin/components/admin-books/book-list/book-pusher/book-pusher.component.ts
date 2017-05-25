@@ -17,6 +17,7 @@ export class BookPusherComponent implements OnInit {
   @Input() book: Book
   bookForm: FormGroup; // <--- heroForm is of type FormGroup
   @Output() update = new EventEmitter<Book>()
+  @Output() updated = new EventEmitter<boolean>()
   constructor(private fb: FormBuilder, private service: CategoryService, private bookService: BookService) { // <--- inject FormBuilder
   }
 
@@ -42,7 +43,7 @@ export class BookPusherComponent implements OnInit {
     this.createForm()
   }
 
-  updateBook() {
+  updateBook(book) {
     const formModel = this.bookForm.value
 
     const saveBook: Book = {
@@ -55,6 +56,9 @@ export class BookPusherComponent implements OnInit {
       description: formModel.description
     }
     this.bookService.updateBook(saveBook)
-      .subscribe(data => this.update.emit(data))
+      .subscribe(data => {
+        this.update.emit(data)
+        this.updated.emit(false)
+      })
   }
 }
