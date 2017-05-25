@@ -13,8 +13,8 @@ import { PaginationInstance } from 'ngx-pagination'
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.css'],
   providers: [BookService, CartService],
-  changeDetection: ChangeDetectionStrategy.OnPush
-})
+/*  changeDetection: ChangeDetectionStrategy.OnPush
+*/})
 export class MainContentComponent implements OnInit {
   books: Book[]
   asyncBooks: Observable<Book[]>
@@ -38,14 +38,13 @@ export class MainContentComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.page)
-    this.loaded = false
-
+    console.log('in main content')
     this.tab = new Tab()
     this.items = this.tab.getItems()
     this.service.getAllBooks().subscribe(books => {
       this.books = books
       this.page = 1
+      console.log(this.books)
     })
     if (Cookie.get('angular-cookie') != null) {
       this.cartService.getCartById(+Cookie.get('angular-cookie'))
@@ -53,8 +52,7 @@ export class MainContentComponent implements OnInit {
           this.cart = data
         })
     }
-    
-    /*this.config = {
+    console.log(this.books)    /*this.config = {
       itemsPerPage: 10,
       currentPage: p
     }*/

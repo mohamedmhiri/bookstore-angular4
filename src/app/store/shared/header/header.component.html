@@ -16,7 +16,7 @@
     <!--    <store-header-search class="right item ui action input"></store-header-search>
 -->
     <div class="right menu">
-      <a class="item" routerLink='cart'>
+      <a class="item" routerLink='cart' suiPopup popupHeader="Visit your Cart">
           <i class="big inverted shop icon"></i>
       </a>
       <a class="item" *ngIf="!auth.isAuthenticated()" routerLink='login'>

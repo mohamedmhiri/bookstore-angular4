@@ -18,7 +18,8 @@ import { NgxPaginationModule } from 'ngx-pagination'; // <-- import the module
   ],
   exports: [
     LoginComponent,
-    NgxPaginationModule
+    NgxPaginationModule,
+    SuiModule
   ]
 })
 export class CollectionModule { }

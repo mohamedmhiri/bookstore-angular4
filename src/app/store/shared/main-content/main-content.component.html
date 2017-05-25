@@ -68,48 +68,50 @@
 <div class="ui internally celled grid">
     <div class="row">
         <div class="ui two column centered grid">
-            <store-header-search (search)="search($event)"></store-header-search>
+            <store-header-search (search)="search($event)" ></store-header-search>
         </div>
     </div>
     <div class="row">
         <div class="three wide column">
-            <app-research (search)="search($event)"></app-research>
+            <app-research (search)="search($event)"  suiPopup popupHeader="advanced search"></app-research>
         </div>
         <div class="ten wide column">
-
+  
             <div class="ui four column link stackable cards">
-                <div *ngFor="let book of books | paginate: { itemsPerPage: 10, currentPage: page }" class="card">
+                <div *ngFor="let book of books" class="card" suiPopup popupHeader="Description" popupText="{{book.description}}">
+                    <!--                | paginate: { itemsPerPage: 10, currentPage: page }
+-->
+                    <!--                                    | paginate: { itemsPerPage: 10, currentPage: page }
+-->
                     <!--                    <div class="ui link cards">
 -->
-                    <div class="card">
-                        <div class="image">
-                            <card-image [book]="book"></card-image>
+                    <div class="image">
+                        <card-image [book]="book"></card-image>
+                    </div>
+                    <div class="content">
+                        <div class="header">
+                            <card-title [book]="book"></card-title>
                         </div>
-                        <div class="content">
-                            <div class="header">
-                                <card-title [book]="book"></card-title>
-                            </div>
 
-                            <!--<div class="description">
+                        <!--<div class="description">
                             Matthew is an interior designer living in New York.
                         </div>-->
-                        </div>
-                        <div class="extra content">
-                            <span class="right floated">
+                    </div>
+                    <div class="extra content">
+                        <span class="right floated">
                                 <card-button [book]="book"></card-button>
                             </span>
-                            <span>
+                        <span>
                                 <i class="dollar icon"></i>
                                 <card-price [book]="book"></card-price>
                             </span>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="has-text-centered">
-                <pagination-controls *ngIf="books.length > 0" (pageChange)="page = $event"></pagination-controls>
-            </div>
             <!--<div class="has-text-centered">
+                <pagination-controls *ngIf="books?.length > 0" (pageChange)="page = $event"></pagination-controls>
+            </div>-->
+            <!--            <div class="has-text-centered">
                 <pagination-controls [id]="config.id"
                     (pageChange)="onPageChange($event)">
                  </pagination-controls>

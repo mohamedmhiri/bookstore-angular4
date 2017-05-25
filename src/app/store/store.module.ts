@@ -27,6 +27,7 @@ import { CardButtonComponent } from './catalog/card-button/card-button.component
 import { CardTitleComponent } from './catalog/card-title/card-title.component';
 import { CardPriceComponent } from './catalog/card-price/card-price.component';
 import { BookViewComponent } from './item/book-view/book-view.component';
+import { HelpComponent } from './help/help.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { BookViewComponent } from './item/book-view/book-view.component';
     CardButtonComponent,
     CardTitleComponent,
     CardPriceComponent,
-    BookViewComponent
+    BookViewComponent,
+    HelpComponent
   ],
   exports: [
     HeaderComponent,

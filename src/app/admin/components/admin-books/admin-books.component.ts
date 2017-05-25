@@ -32,6 +32,14 @@ export class AdminBooksComponent implements OnInit {
     console.log(res)
   }
 
+  addBook(book: Book) {
+    this.ngOnInit()
+  }
+
+  deleteBook(book: Book) {
+    this.ngOnInit()
+  }
+
 
 
 }

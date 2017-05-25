@@ -5,37 +5,28 @@
         <label>Book Name</label>
         <input type="text" placeholder="Book Name" formControlName="name">
       </div>
-      <div class="field">
-        <label>Book Edition</label>
-        <input type="text" placeholder="Book Edition" formControlName="edition">
-      </div>
+
       <div class="field">
         <label>Book Description</label>
         <input type="text" placeholder="Book Description" formControlName="description">
       </div>
       <div class="field">
-        <label>Book Autor</label>
-        <input type="text" placeholder="Book Author" formControlName="author">
-      </div>
-      <!--<div class="field">
-        <label>Category Name</label>
-        <select>
-          <option *ngFor="let category of categories" [value]="category._id">{{category.name}}</option>
-        </select>
-      </div>-->
-      <div class="field">
-        <label>Book Category</label>
-        <input type="text" placeholder="Book Category" formControlName="category">
-      </div>
-        
-      <!--<div class="field">
-        <label>Middle name</label>
-        <input type="text" placeholder="Middle Name">
+        <label>Book old price</label>
+        <input type="text" placeholder="Book old price" formControlName="oldPrice">
       </div>
       <div class="field">
-        <label>Last name</label>
-        <input type="text" placeholder="Last Name">
-      </div>-->
+        <label>Book recent price</label>
+        <input type="text" placeholder="Book recent price" formControlName="recentPrice">
+      </div>
+      <div class="field">
+        <label>Total Books added</label>
+        <input type="text" placeholder="total Books added" formControlName="inMarket">
+      </div>
+      <div class="field">
+        <label>Available Books</label>
+        <input type="text" placeholder="available Books" formControlName="availableBooks">
+      </div>
+      <div class="ui button" (click)="updateBook()" tabindex="0">Update</div>
     </form>
 
   </div>

@@ -7,10 +7,10 @@
   </div>
   -->
 <form #f="ngForm" novalidate>
-  <div class="ui category search">
-    <div class="ui icon input">
+  <div class="ui category search" >
+    <div class="ui icon input" suiPopup popupHeader="rapid search">
       <input type="text" class="prompt" name="attr" (blur)="getBookRapidSearch(book)" (keyup)="getBookRapidSearch(book)" (keyup.enter)="getBookRapidSearch(book)" [(ngModel)]=book.attr placeholder="Search...">
-      <i class="search icon"></i>
+      <i class="search icon" ></i>
     </div>
   </div>
 </form>

@@ -58,6 +58,7 @@ export class BookService {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
         console.log(book);
+        book.isDeleted = 1
         return this.http.put(`${this.url}books/${book._id}/delete`, JSON.stringify(book), { headers: headers }).map(response => response.json());
 
 

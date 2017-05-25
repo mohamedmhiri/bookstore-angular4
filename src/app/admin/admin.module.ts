@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
 // ng2Semantic module
-import { SuiModule } from 'ng2-semantic-ui';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { AdminBooksComponent } from './components/admin-books/admin-books.component';
 import { AdminCategoriesComponent } from './components/admin-categories/admin-categories.component';
@@ -28,7 +27,6 @@ import { BookGeneratorComponent } from './components/admin-books/book-generator/
 @NgModule({
   imports: [
     CommonModule,
-    SuiModule,
     AdminRouterModule,
     CollectionModule,
     ReactiveFormsModule
