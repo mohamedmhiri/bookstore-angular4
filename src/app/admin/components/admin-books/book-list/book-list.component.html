@@ -32,8 +32,8 @@
   </div>-->
     </div>
     <div content>
-      <p>{{ book.description }}</p>
-      <book-pusher [book]="book"></book-pusher>
+      <p *ngIf='!updateForm'>{{ book.description }}</p>
+      <book-pusher *ngIf='updateForm' [book]="book"></book-pusher>
     </div>
   </sui-accordion-panel>
 </sui-accordion>
