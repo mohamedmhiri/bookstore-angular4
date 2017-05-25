@@ -1,45 +1,55 @@
 <div class="ui form">
   <div class="fields">
     <form [formGroup]="bookForm" novalidate>
-      <div class="ui sixteen column stackable grid">
+      <div class="ui three column stackable grid">
         <div class="column">
-
+          <div class="field">
+            <label>Book Name</label>
+            <input type="text" placeholder="Book Name" formControlName="name">
+          </div>
         </div>
         <div class="column">
-
+          <div class="field">
+            <label>Book Description</label>
+            <input type="text" placeholder="Book Description" formControlName="description">
+          </div>
         </div>
 
         <div class="column">
-
+          <div class="field">
+            <label>Book old price</label>
+            <input type="text" placeholder="Book old price" formControlName="oldPrice">
+          </div>
         </div>
 
-        <div class="field">
-          <label>Book Name</label>
-          <input type="text" placeholder="Book Name" formControlName="name">
-        </div>
 
-        <div class="field">
-          <label>Book Description</label>
-          <input type="text" placeholder="Book Description" formControlName="description">
+
+
+        <div class="column">
+          <div class="field">
+            <label>Book recent price</label>
+            <input type="text" placeholder="Book recent price" formControlName="recentPrice">
+          </div>
         </div>
-        <div class="field">
-          <label>Book old price</label>
-          <input type="text" placeholder="Book old price" formControlName="oldPrice">
+        <div class="column">
+          <div class="field">
+            <label>Total Books added</label>
+            <input type="text" placeholder="total Books added" formControlName="inMarket">
+          </div>
         </div>
-        <div class="field">
-          <label>Book recent price</label>
-          <input type="text" placeholder="Book recent price" formControlName="recentPrice">
+        <div class="column">
+          <div class="field">
+            <label>Available Books</label>
+            <input type="text" placeholder="available Books" formControlName="availableBooks">
+          </div>
         </div>
-        <div class="field">
-          <label>Total Books added</label>
-          <input type="text" placeholder="total Books added" formControlName="inMarket">
+        <div class="column"></div>
+        <div class="column">
+          <div class="ui button" (click)="saveBook()" tabindex="0">Add</div>
         </div>
-        <div class="field">
-          <label>Available Books</label>
-          <input type="text" placeholder="available Books" formControlName="availableBooks">
-        </div>
-        <div class="ui button" (click)="saveBook()" tabindex="0">Add</div>
+      </div>
+
     </form>
 
-    </div>
   </div>
+</div>
